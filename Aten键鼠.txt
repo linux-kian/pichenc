@@ -1,0 +1,59 @@
+Bus Hound 6.01 capture on Windows Vista (x64). Complements of www.perisoft.net
+
+  Device - Device ID (followed by the endpoint for USB devices)
+            (3) Intel(R) USB 3.0 可扩展主机控制器 - 1.0 (Microsoft)
+            (24) USB Input Device
+            (29) USB Composite Device
+            (30) USB Input Device
+            (31) USB Input Device
+            (34) USB Mass Storage Device
+  Phase  - Phase Type
+            CTL   USB control transfer       
+            IN    Data in transfer           
+            OUT   Data out transfer          
+  Data   - Hex dump of the data transferred
+  Descr  - Description of the phase
+  Delta  - Elapsed time from the previous phase to the current phase
+  Cmd... - Position in the captured data
+
+
+Device  Phase  Data                                                                                                    Description                       Delta  Cmd.Phase.Ofs(rep)
+------  -----  ------------------------------------------------------------------------------------------------------  --------------------------------  -----  ------------------
+  29.0  CTL    80 06 00 01  00 00 12 00                                                                                GET DESCRIPTOR                     11sc         1.1.0        
+  29.0  IN     12 01 10 01  00 00 00 40  57 05 08 23  00 01 01 02  00 01                                               .......@W..#......                3.9ms         1.2.0        
+  29.0  CTL    80 06 00 02  00 00 09 00                                                                                GET DESCRIPTOR                     21us         2.1.0        
+  29.0  IN     09 02 3b 00  02 01 00 a0  32                                                                            ..;.....2                         4.2ms         2.2.0        
+  29.0  CTL    80 06 00 02  00 00 3b 00                                                                                GET DESCRIPTOR                     12us         3.1.0        
+  29.0  IN     09 02 3b 00  02 01 00 a0  32 09 04 00  00 01 03 01  01 00 09 21  10 01 21 01  22 41 00 07  05 81 03 08  ..;.....2..........!..!."A......  5.1ms         3.2.0        
+  29.0  CTL    00 09 01 00  00 00 00 00                                                                                SET CONFIG                        1.3ms         4.1.0        
+  29.0  CTL    80 06 02 03  09 04 04 00                                                                                GET DESCRIPTOR                    4.0ms         5.1.0(2)     
+  29.0  IN     18 03 4b 00                                                                                             ..K.                              3.4ms         5.2.0        
+  29.0  CTL    80 06 02 03  09 04 18 00                                                                                GET DESCRIPTOR                     20us         6.1.0(2)     
+  29.0  IN     18 03 4b 00  56 00 4d 00  20 00 41 00  64 00 61 00  70 00 74 00  65 00 72 00                            ..K.V.M. .A.d.a.p.t.e.r.          3.8ms         6.2.0        
+  30.0  CTL    80 06 00 01  00 00 12 00                                                                                GET DESCRIPTOR                     14ms         9.1.0        
+  30.0  IN     12 01 10 01  00 00 00 40  57 05 08 23  00 01 01 02  00 01                                               .......@W..#......                  4us         9.2.0        
+  30.0  CTL    80 06 00 02  00 00 09 00                                                                                GET DESCRIPTOR                      5us        10.1.0        
+  30.0  IN     09 02 22 00  01 01 00 a0  32                                                                            ..".....2                           2us        10.2.0        
+  30.0  CTL    80 06 00 02  00 00 22 00                                                                                GET DESCRIPTOR                      2us        11.1.0        
+  30.0  IN     09 02 22 00  01 01 00 a0  32 09 04 00  00 01 03 01  01 00 09 21  10 01 21 01  22 41 00 07  05 81 03 08  ..".....2..........!..!."A......    2us        11.2.0        
+  30.0  CTL    00 09 01 00  00 00 00 00                                                                                SET CONFIG                          4us        12.1.0        
+  30.0  CTL    21 0a 00 00  00 00 00 00                                                                                SET IDLE                            3us        13.1.0        
+  30.0  CTL    81 06 00 22  00 00 81 00                                                                                GET DESCRIPTOR                    2.7ms        14.1.0        
+  30.0  IN     05 01 09 06  a1 01 05 07  19 e0 29 e7  15 00 25 01  75 01 95 08  81 02 95 01  75 08 81 01  95 05 75 01  ..........)...%.u.......u.....u.  5.4ms        14.2.0        
+  30.1  IN     00 00 00 00  00 00 00 00                                                                                ........                          2.0ms        15.1.0        
+  31.0  CTL    80 06 00 01  00 00 12 00                                                                                GET DESCRIPTOR                    2.8ms        16.1.0        
+  31.0  IN     12 01 10 01  00 00 00 40  57 05 08 23  00 01 01 02  00 01                                               .......@W..#......                  5us        16.2.0        
+  31.0  CTL    80 06 00 02  00 00 09 00                                                                                GET DESCRIPTOR                      4us        17.1.0        
+  31.0  IN     09 02 22 00  01 01 00 a0  32                                                                            ..".....2                           3us        17.2.0        
+  31.0  CTL    80 06 00 02  00 00 22 00                                                                                GET DESCRIPTOR                      2us        18.1.0        
+  31.0  IN     09 02 22 00  01 01 00 a0  32 09 04 01  00 01 03 01  02 00 09 21  10 01 21 01  22 34 00 07  05 84 03 08  ..".....2..........!..!."4......    2us        18.2.0        
+  31.0  CTL    00 09 01 00  00 00 00 00                                                                                SET CONFIG                          3us        19.1.0        
+  31.0  CTL    21 0a 00 00  01 00 00 00                                                                                SET IDLE                            4us        20.1.0        
+  31.0  CTL    81 06 00 22  01 00 74 00                                                                                GET DESCRIPTOR                    2.6ms        21.1.0        
+  31.0  IN     05 01 09 02  a1 01 09 01  a1 00 05 09  19 01 29 05  15 00 25 01  95 05 75 01  81 02 95 01  75 03 81 01  ..............)...%...u.....u...  4.6ms        21.2.0        
+  30.0  CTL    21 09 00 02  00 00 01 00                                                                                SET REPORT                        8.7ms        22.1.0        
+  30.0  OUT    01                                                                                                      .                                 2.9ms        22.2.0        
+  29.0  CTL    80 06 00 02  00 00 09 00                                                                                GET DESCRIPTOR                    1.6sc        23.1.0        
+  29.0  IN     09 02 3b 00  02 01 00 a0  32                                                                            ..;.....2                         4.3ms        23.2.0        
+  29.0  CTL    80 06 00 02  00 00 3b 00                                                                                GET DESCRIPTOR                    1.2ms        24.1.0        
+  29.0  IN     09 02 3b 00  02 01 00 a0  32 09 04 00  00 01 03 01  01 00 09 21  10 01 21 01  22 41 00 07  05 81 03 08  ..;.....2..........!..!."A......  5.2ms        24.2.0        
